@@ -2,39 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeGenerator : MonoBehaviour {
+public class RoomGenerator : MonoBehaviour {
 
     public GameObject cube;
+    public int size;
 
-    List<GameObject> mazeCubes;
-	// Use this for initialization
-	void Start () {
-        mazeCubes = new List<GameObject>();
-        GameObject newCube;
+    public List<GameObject> roomCubes;
+
+    private void GenerateRoomCubes()
+    {
         Vector3 pos;
-        for (int x = 0; x < 10; ++x)
+        for (pos.x = 0; pos.x < size; ++pos.x)
         {
-            for (int y = 0; y < 10; ++y)
+            for (pos.y = 0; pos.y < size; ++pos.y)
             {
-                for (int z = 0; z < 10; ++z)
+                for (pos.z = 0; pos.z < size; ++pos.z)
                 {
-                    if (z == 0 || x == 0 || y == 0 || x == 9 || y == 9 || z == 9)
+                    if (pos.z == 0 || pos.x == 0 || pos.y == 0 || pos.x == size - 1 || pos.y == size - 1 || pos.z == size - 1)
                     {
-                        newCube = Instantiate(cube);
-                        newCube.name = "cube" + (z + (y * 10) + (100 * x));
-                        pos.x = x;
-                        pos.y = y;
-                        pos.z = z;
-                        newCube.transform.position = pos;
-                        mazeCubes.Add(newCube);
+                        roomCubes.Add(Instantiate(cube) as GameObject);
+                        roomCubes[roomCubes.Count - 1].name = "cube" + (pos.z + (pos.y * 10) + (100 * pos.x));
+                        roomCubes[roomCubes.Count - 1].transform.parent = gameObject.transform;
+                        roomCubes[roomCubes.Count - 1].transform.localPosition = pos;
                     }
                 }
             }
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+    }
+
+    // Use this for initialization
+    void Start () {
+        roomCubes = new List<GameObject>();
+
+        GenerateRoomCubes();
 	}
 }
