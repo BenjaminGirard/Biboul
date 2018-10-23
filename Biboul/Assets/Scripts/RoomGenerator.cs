@@ -128,7 +128,7 @@ public class RoomGenerator : MonoBehaviour {
     void Start () {
         GenerateRoomCubes();
         System.Random rnd = new System.Random();
-        int face = 1;// rnd.Next(1, 6);
+        int face = rnd.Next(1, 6);
         GenerateDoor(face);
 	}
 
