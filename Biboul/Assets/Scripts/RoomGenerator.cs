@@ -44,7 +44,7 @@ public class RoomGenerator : MonoBehaviour {
             if (pos == cube.transform.localPosition)
             {
                 roomCubes.Remove(cube);
-                GameObject.Destroy(cube);
+                Destroy(cube);
                 break;
             }
         }
