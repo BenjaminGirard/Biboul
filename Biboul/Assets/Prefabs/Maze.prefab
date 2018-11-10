@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   room: {fileID: 1371596517229908, guid: ea32646ff751bb540a561c97f8db7090, type: 2}
   roomSize: 10
-  mazeSize: 3
+  mazeSize: 10
+  mazeRooms: []

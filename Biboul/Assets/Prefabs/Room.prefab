@@ -51,5 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3a0f38c5af1ac4599c7056a5f8d8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 1268274077514988, guid: e28602711421524428cac246b17c1404, type: 2}
+  cube: {fileID: 1672506154655498, guid: f1e3fb3fb1ba145418b0d21300566e73, type: 2}
   size: 10
+  roomCubes: []
