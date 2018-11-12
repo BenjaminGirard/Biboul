@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ClickSelectorGravity : MonoBehaviour {
 
-    public GameObject mainCamera;
+    private GameObject mainCamera;
 
     void Start()
     {
-        mainCamera = GameObject.Find("Main Camera");
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     private void OnMouseOver()
