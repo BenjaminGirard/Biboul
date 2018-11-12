@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4141937093354032}
-  - component: {fileID: 114034305976697952}
+  - component: {fileID: 114198695782279366}
   m_Layer: 0
   m_Name: Maze
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114034305976697952
+--- !u!114 &114198695782279366
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1510117476561022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b59aec8e53097e45be5bf87fc066300, type: 3}
+  m_Script: {fileID: 11500000, guid: b5f57f604c3dc4602b46e68c159110b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 1371596517229908, guid: ea32646ff751bb540a561c97f8db7090, type: 2}
