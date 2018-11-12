@@ -5,4 +5,9 @@ using UnityEngine;
 public class AttractionSelector : MonoBehaviour {
 
     public GameObject selected;
+
+    private void Start()
+    {
+        selected = null;
+    }
 }
