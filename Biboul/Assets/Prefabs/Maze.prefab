@@ -51,7 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f57f604c3dc4602b46e68c159110b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plane: {fileID: 1695458603590916, guid: 90b4a415b90e54c17869d28cda7dc790, type: 2}
   room: {fileID: 1371596517229908, guid: ea32646ff751bb540a561c97f8db7090, type: 2}
-  roomSize: 10
-  mazeSize: 10
+  roomSize: 2
+  mazeSize: 2
   mazeRooms: []

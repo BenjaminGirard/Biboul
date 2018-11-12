@@ -6,7 +6,7 @@ public class RoomGenerator : MonoBehaviour {
 
     public GameObject cube;
 
-    GameObject player;
+    private GameObject player;
     float size;
     bool display = false;
     float distancePlayer;
