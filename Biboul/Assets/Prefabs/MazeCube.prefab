@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65170632484276926}
   - component: {fileID: 114089485267361326}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: MazeCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 01305f8d648f34e2887dd712894eb2ad, type: 2}
+  - {fileID: 2100000, guid: 304bbd69e6780e146bf7d37ce622a6d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -490,6 +490,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1323358635285156, guid: e1400bd076dba91459ca707e1c95a8b8, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1400bd076dba91459ca707e1c95a8b8, type: 2}
   m_IsPrefabAsset: 0
@@ -811,6 +815,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 64.75536
       objectReference: {fileID: 0}
+    - target: {fileID: 1672506154655498, guid: f1e3fb3fb1ba145418b0d21300566e73, type: 2}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e3fb3fb1ba145418b0d21300566e73, type: 2}
   m_IsPrefabAsset: 0
@@ -1026,16 +1034,16 @@ Prefab:
     - target: {fileID: 114198695782279366, guid: f3069166d4cd28341a21708103e3939d,
         type: 2}
       propertyPath: roomSize
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114198695782279366, guid: f3069166d4cd28341a21708103e3939d,
         type: 2}
       propertyPath: mazeSize
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1510117476561022, guid: f3069166d4cd28341a21708103e3939d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3069166d4cd28341a21708103e3939d, type: 2}
