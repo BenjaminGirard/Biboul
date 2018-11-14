@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4211982690576022}
   - component: {fileID: 33270027332815182}
   - component: {fileID: 23893511975079984}
-  - component: {fileID: 65096900197349852}
+  - component: {fileID: 65989705880897762}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1695458603590916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -84,7 +84,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1695458603590916}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65096900197349852
+--- !u!65 &65989705880897762
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AttractionSelector : MonoBehaviour {
-
     public GameObject selected;
 
-    private void Start()
+    public void ClearSelected(float amount)
     {
         selected = null;
-        Cursor.lockState = CursorLockMode.Locked;
+        gameObject.GetComponent<AngerBarController>().useAnger(amount);
     }
 }

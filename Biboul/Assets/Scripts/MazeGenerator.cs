@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour {
 
+    public GameObject player;
     public GameObject plane;
     public GameObject room;
     public int roomSize;
@@ -35,56 +36,35 @@ public class MazeGenerator : MonoBehaviour {
         }
     }
 
+    void InstantiatePlane(string type, Vector3 pos, Vector3 scale)
+    {
+        GameObject newPlane = Instantiate(plane);
+        newPlane.name = type;
+        newPlane.transform.parent = gameObject.transform;
+        newPlane.transform.localPosition = pos;
+        newPlane.transform.localScale = scale;
+        newPlane.tag = type;
+    }
+
     void GeneratePlane()
     {
         float sideSize = mazeSize * roomSize;
         float center = sideSize / 2;
-        GameObject newPlane;
-        newPlane = Instantiate(plane);
-        newPlane.name = "Left";
-        newPlane.transform.parent = gameObject.transform;
-        newPlane.transform.localPosition = new Vector3(-5, center, center);
-        newPlane.transform.localScale = new Vector3(1, sideSize, sideSize);
-        newPlane.tag = "Left";
 
-        newPlane = Instantiate(plane);
-        newPlane.name = "Right";
-        newPlane.transform.parent = gameObject.transform;
-        newPlane.transform.localPosition = new Vector3(sideSize + 5, center, center);
-        newPlane.transform.localScale = new Vector3(1, sideSize, sideSize);
-        newPlane.tag = "Right";
+        InstantiatePlane("Left", new Vector3(-roomSize, center, center), new Vector3(1, sideSize, sideSize));
+        InstantiatePlane("Right", new Vector3(sideSize + roomSize, center, center), new Vector3(1, sideSize, sideSize));
 
-        newPlane = Instantiate(plane);
-        newPlane.name = "Down";
-        newPlane.transform.parent = gameObject.transform;
-        newPlane.transform.localPosition = new Vector3(center, -5, center);
-        newPlane.transform.localScale = new Vector3(sideSize, 1, sideSize);
-        newPlane.tag = "Down";
+        InstantiatePlane("Down", new Vector3(center, -roomSize, center), new Vector3(sideSize, 1, sideSize));
+        InstantiatePlane("Up", new Vector3(center, sideSize + roomSize, center), new Vector3(sideSize, 1, sideSize));
 
-        newPlane = Instantiate(plane);
-        newPlane.name = "Up";
-        newPlane.transform.parent = gameObject.transform;
-        newPlane.transform.localPosition = new Vector3(center, sideSize + 5, center);
-        newPlane.transform.localScale = new Vector3(sideSize, 1, sideSize);
-        newPlane.tag = "Up";
-
-        newPlane = Instantiate(plane);
-        newPlane.name = "Back";
-        newPlane.transform.parent = gameObject.transform;
-        newPlane.transform.localPosition = new Vector3(center, center, -5);
-        newPlane.transform.localScale = new Vector3(sideSize, sideSize, 1);
-        newPlane.tag = "Back";
-
-        newPlane = Instantiate(plane);
-        newPlane.name = "Forward";
-        newPlane.transform.parent = gameObject.transform;
-        newPlane.transform.localPosition = new Vector3(center, center, sideSize + 5);
-        newPlane.transform.localScale = new Vector3(sideSize, sideSize, 1);
-        newPlane.tag = "Forward";
+        InstantiatePlane("Back", new Vector3(center, center, -roomSize), new Vector3(sideSize, sideSize, 1));
+        InstantiatePlane("Forward", new Vector3(center, center, sideSize + roomSize), new Vector3(sideSize, sideSize, 1));
     }
 
     // Use this for initialization
     void Start () {
+        Random.InitState((int)Time.deltaTime);
+        player.transform.localPosition = new Vector3(roomSize / 2, roomSize * (mazeSize - 0.5f), roomSize / 2);
         GeneratePlane();
         GenerateMazeRooms();
         //GenerateDoors();
@@ -94,11 +74,10 @@ public class MazeGenerator : MonoBehaviour {
     {
         if (!doorGen && mazeRooms.Count != 0)
         {
-            System.Random rnd = new System.Random();
-
             foreach (var room in mazeRooms)
             {
-                room.GetComponent<RoomGenerator>().GenerateDoor(rnd.Next(1, 6));
+                room.GetComponent<RoomGenerator>().GenerateDoor(Random.Range(1, 7));
+                room.GetComponent<RoomGenerator>().GenerateDoor(Random.Range(1, 7));
             }
             doorGen = true;
         }

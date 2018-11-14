@@ -19,7 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4141937093354032}
-  - component: {fileID: 114198695782279366}
+  - component: {fileID: 114034305976697952}
+  - component: {fileID: 114342233094079690}
   m_Layer: 0
   m_Name: Maze
   m_TagString: Untagged
@@ -40,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114198695782279366
+--- !u!114 &114034305976697952
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,11 +49,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1510117476561022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f57f604c3dc4602b46e68c159110b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 097a37d267969474398a73c78df264d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plane: {fileID: 1695458603590916, guid: 90b4a415b90e54c17869d28cda7dc790, type: 2}
+  plane: {fileID: 1695458603590916, guid: 43632747a1794fe48b98de190be137b8, type: 2}
   room: {fileID: 1371596517229908, guid: ea32646ff751bb540a561c97f8db7090, type: 2}
-  roomSize: 2
-  mazeSize: 2
+  roomSize: 10
+  mazeSize: 5
   mazeRooms: []
+--- !u!114 &114342233094079690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510117476561022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e03a603a1bb514685a24635e1063eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

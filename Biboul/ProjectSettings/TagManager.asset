@@ -11,6 +11,8 @@ TagManager:
   - Back
   - Forward
   - PlayerPivot
+  - Bullet
+  - Projectile
   layers:
   - Default
   - TransparentFX

@@ -4,40 +4,18 @@ using UnityEngine;
 
 public class ClickSelectorGravity : MonoBehaviour {
 
-    private GameObject mainCamera;
+    private GameObject player;
 
-    private void Start()
+    void Start()
     {
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-    }
-
-    private void Update()
-    {
-        print("update");
-        if (Input.GetKeyDown(KeyCode.F)) {
-            print("keypressed");
-
-            AttractionSelector handle = mainCamera.GetComponent<AttractionSelector>();
-
-            if (handle.selected == null)
-            {
-                handle.selected = gameObject;
-            }
-            else
-            {
-                handle.selected.GetComponent<Rigidbody>().useGravity = false;
-                handle.selected.GetComponent<Gravity>().attractionObject = gameObject;
-                handle.selected = null;
-            }
-        }
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnMouseOver()
     {
-        print(gameObject.tag);
         if (Input.GetMouseButtonDown(0))
         {
-            AttractionSelector handle = mainCamera.GetComponent<AttractionSelector>();
+            AttractionSelector handle = player.GetComponent<AttractionSelector>();
             if (handle.selected == null)
             {
                 handle.selected = gameObject;
@@ -46,7 +24,7 @@ public class ClickSelectorGravity : MonoBehaviour {
             {
                 handle.selected.GetComponent<Rigidbody>().useGravity = false;
                 handle.selected.GetComponent<Gravity>().attractionObject = gameObject;
-                handle.selected = null;
+                handle.ClearSelected(25);
             }
         }
     }

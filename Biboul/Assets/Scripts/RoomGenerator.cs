@@ -6,7 +6,7 @@ public class RoomGenerator : MonoBehaviour {
 
     public GameObject cube;
 
-    private GameObject player;
+    GameObject player;
     float size;
     bool display = false;
     float distancePlayer;
@@ -63,14 +63,14 @@ public class RoomGenerator : MonoBehaviour {
 
     private void DigDoor(Vector3 pos)
     {
-        foreach (var cube in roomCubes)
+        for (int i = roomCubes.Count - 1; i >= 0; i--)
         {
             //            UnityEngine.Debug.Log(cube.transform.localPosition);
-            if (pos == cube.transform.localPosition)
+            if (Vector3.Distance(pos, roomCubes[i].transform.localPosition) < 1.5f)
             {
-                roomCubes.Remove(cube);
-                Destroy(cube);
-                break;
+                Destroy(roomCubes[i]);
+                roomCubes.RemoveAt(i);
+                //break;
             }
         }
     }
@@ -80,10 +80,10 @@ public class RoomGenerator : MonoBehaviour {
         foreach (var cube in roomCubes)
         {
             //            UnityEngine.Debug.Log(cube.transform.localPosition);
-            if (pos == cube.transform.localPosition)
+            if (Vector3.Distance(pos, cube.transform.localPosition) < 1.5f)
             {
                 cube.SetActive(false);
-                break;
+                //break;
             }
         }
     }
@@ -179,25 +179,35 @@ public class RoomGenerator : MonoBehaviour {
         GenerateRoomCubes();
 	}
 
+    public void Deactivate()
+    {
+        foreach (var cube in roomCubes)
+            cube.SetActive(false);
+        display = false;
+    }
+
+    public void Activate()
+    {
+        foreach (var cube in roomCubes)
+            cube.SetActive(true);
+        display = true;
+ 
+        for (int i = 1; i < 7; ++i)
+        {
+            HandleTmpDoor(i);
+        }
+    }
+
     void Update()
     {
         distancePlayer = Vector3.Distance(player.transform.position, this.transform.position + new Vector3(size / 2, size / 2, size / 2));
         if (display &&  distancePlayer > 2 * size)
         {
-            foreach (var cube in roomCubes)
-                cube.SetActive(false);
-            display = false;
+            Deactivate();
         }
-        else if (!display && distancePlayer <= 2 * size)
+        if (!display && distancePlayer <= 2 * size)
         {
-            foreach (var cube in roomCubes)
-                cube.SetActive(true);
-            display = true;
-
-            for (int i = 1; i < 7; ++i)
-            {
-                HandleTmpDoor(i);
-            }
+            Activate();
         }
     }
 }
