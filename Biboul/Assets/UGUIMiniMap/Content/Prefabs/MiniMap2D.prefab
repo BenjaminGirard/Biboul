@@ -952,11 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60da4642a8c785498401ca086e31683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GizmoColor:
-    r: 0
-    g: 0.6689658
-    b: 1
-    a: 0.84313726
+  GizmoColor: {r: 0, g: 0.6689658, b: 1, a: 0.84313726}
 --- !u!114 &11404454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1617,21 +1613,9 @@ MonoBehaviour:
   DragCursorIcon: {fileID: 2800000, guid: 1826d50b3cb9b914c899f276f4066858, type: 3}
   HotSpot: {x: 15, y: 15}
   MapTexture: {fileID: 2800000, guid: 16412ccaf0b36234087e0bd79e865e85, type: 3}
-  TintColor:
-    r: 0.9485294
-    g: 0.9485294
-    b: 0.9485294
-    a: 1
-  SpecularColor:
-    r: 0.44852942
-    g: 0.44852942
-    b: 0.44852942
-    a: 1
-  EmessiveColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 0.99215686
+  TintColor: {r: 0.9485294, g: 0.9485294, b: 0.9485294, a: 1}
+  SpecularColor: {r: 0.44852942, g: 0.44852942, b: 0.44852942, a: 1}
+  EmessiveColor: {r: 1, g: 1, b: 1, a: 0.99215686}
   EmissionAmount: 1
   ReferenceMat: {fileID: 2100000, guid: 25d829ed010696c4a900076f15ccf89f, type: 2}
   MapPlane: {fileID: 111958, guid: 2b89573881c76454f868fcad24ba048b, type: 2}
