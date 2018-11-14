@@ -17,7 +17,7 @@ public class AngerBarController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (active)
-			yellow.fillAmount += Time.deltaTime;
+			yellow.fillAmount += Time.deltaTime / 12.0f;
 		if (yellow.fillAmount == 1.0f)
 			active = false;
 	}
