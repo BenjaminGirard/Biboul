@@ -9,5 +9,6 @@ public class AttractionSelector : MonoBehaviour {
     private void Start()
     {
         selected = null;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

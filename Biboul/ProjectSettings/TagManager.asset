@@ -10,6 +10,7 @@ TagManager:
   - Down
   - Back
   - Forward
+  - PlayerPivot
   layers:
   - Default
   - TransparentFX
