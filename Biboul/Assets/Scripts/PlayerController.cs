@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour {
 
     void Jump()
     {
-        rb.velocity += new Vector3(0, jumpSpeed * Time.deltaTime, 0);
+        rb.velocity += transform.up * (jumpSpeed * Time.deltaTime);
     }
 
 	// Update is called once per frame
