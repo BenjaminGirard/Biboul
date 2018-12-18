@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class HealthBarController : MonoBehaviour {
 
@@ -46,7 +48,7 @@ public class HealthBarController : MonoBehaviour {
 
 		if (green.fillAmount < dmg){
 			green.fillAmount = 0.0f;
-			//gameOver;
+			SceneManager.LoadScene(2);
 			return ;
 		}
 		green.fillAmount -= dmg;

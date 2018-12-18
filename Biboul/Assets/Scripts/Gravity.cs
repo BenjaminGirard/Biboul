@@ -5,7 +5,7 @@ using UnityEngine;
 public class Gravity : MonoBehaviour {
 
     public GameObject attractionObject;
-    public float force = 2;
+    public float force = 100;
 
     // Use this for initialization
     void Start () {    
@@ -50,7 +50,7 @@ public class Gravity : MonoBehaviour {
 //        Vector3 closestPoint = NearestVertexTo();
 		Vector3 closestPoint = attractionObject.GetComponent<Collider>().bounds.ClosestPoint(this.transform.position);
 		Vector3 vector = closestPoint - this.transform.position;
-        this.GetComponent<Rigidbody>().AddForce(vector * force);
+        this.GetComponent<Rigidbody>().AddForce(vector.normalized * force, ForceMode.Acceleration);
 
 /*		Quaternion rotation = this.transform.rotation;
 		Vector2 axe = Vector2.up;

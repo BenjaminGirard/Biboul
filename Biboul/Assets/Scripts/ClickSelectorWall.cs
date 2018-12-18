@@ -20,6 +20,7 @@ public class ClickSelectorWall : MonoBehaviour {
             if (handle.selected != null)
             {
                 handle.selected.GetComponent<Rigidbody>().useGravity = false;
+                handle.selected.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 handle.selected.GetComponent<Gravity>().attractionObject = plane;
                 handle.ClearSelected(50);
             }

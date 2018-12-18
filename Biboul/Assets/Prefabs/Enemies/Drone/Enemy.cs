@@ -18,7 +18,10 @@ public class Enemy : MonoBehaviour {
         if (collision.collider.gameObject.tag == "Projectile")
         {
             if (collision.relativeVelocity.magnitude > 4)
+            {
+                gameObject.GetComponentInParent<RoomGenerator>().ennemies.Remove(gameObject);
                 Destroy(gameObject);
+            }
         }
     }
 }

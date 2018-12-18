@@ -63,7 +63,7 @@ public class MazeGenerator : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Random.InitState((int)Time.deltaTime);
+        Random.InitState(System.DateTime.Now.Millisecond);
         player.transform.localPosition = new Vector3(roomSize / 2, roomSize * (mazeSize - 0.5f), roomSize / 2);
         GeneratePlane();
         GenerateMazeRooms();
