@@ -32,7 +32,7 @@ public class DroneBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Vector3.Distance(transform.position, target.position) < 12)
+		if (Vector3.Distance(transform.position, target.position) < 16)
 		{
 			isAggro = true;
 			droneEye.material.color = Color.red;
@@ -44,7 +44,7 @@ public class DroneBehavior : MonoBehaviour
 		}
 		if (isAggro)
 		{
-			transform.LookAt(target);
+			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), Time.deltaTime * 2);
 			if (Vector3.Distance(transform.position, target.position) < 8)
 			{
 				if (timeStamp <= Time.time)
@@ -64,7 +64,7 @@ public class DroneBehavior : MonoBehaviour
 	public void Attack()
 	{
 		GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-		bullet.GetComponent<BulletBehavior>().Target = target;
+		bullet.GetComponent<BulletBehavior>().Target = new Vector3(target.position.x, target.position.y, target.position.z);
 		bullet.GetComponent<BulletBehavior>().Speed = 6;
 	}
 }

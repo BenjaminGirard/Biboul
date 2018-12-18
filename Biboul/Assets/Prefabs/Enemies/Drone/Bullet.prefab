@@ -23,8 +23,9 @@ GameObject:
   - component: {fileID: 23813509463374426}
   - component: {fileID: 135744525749984188}
   - component: {fileID: 114511804479904050}
-  - component: {fileID: 95127964841530954}
   - component: {fileID: 122111797082525270}
+  - component: {fileID: 54689544712173522}
+  - component: {fileID: 114228602931527992}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1531222766315336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.904, y: 1.014, z: 2.707}
+  m_LocalPosition: {x: -4.33, y: 1.014, z: -7.59}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,7 +55,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -87,24 +88,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1531222766315336}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &95127964841530954
-Animator:
-  serializedVersion: 3
+--- !u!54 &54689544712173522
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1531222766315336}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &114228602931527992
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1531222766315336}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4d06a43a336627b4b973e4ce453734b0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0235bd321f674543a74fba4d354b7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 2}
 --- !u!114 &114511804479904050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,14 +126,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c926646c2c81a0140b61a3a56899d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!122 &122111797082525270
 Halo:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1531222766315336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Color:
     serializedVersion: 2
     rgba: 4294964480
@@ -138,5 +147,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}

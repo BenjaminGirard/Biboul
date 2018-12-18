@@ -5,9 +5,10 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
 	private float speed;
-	public Transform target;
+	private Vector3 target;
 	private bool isDestroyed;
 	private Animator anim;
+	private Rigidbody _rigidbody;
 
 	public float Speed
 	{
@@ -15,7 +16,7 @@ public class BulletBehavior : MonoBehaviour
 		set { speed = value; }
 	}
 
-	public Transform Target
+	public Vector3 Target
 	{
 		get { return target; }
 		set { target = value; }
@@ -25,17 +26,19 @@ public class BulletBehavior : MonoBehaviour
 	void Start ()
 	{
 		anim = transform.GetComponent<Animator>();
+		_rigidbody = transform.GetComponent<Rigidbody>();
+		_rigidbody.AddForce((target - transform.position) * 60);
 		Destroy(gameObject, 2);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+//		transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * speed);
 	}
 
 	private void OnDestroy()
 	{
-		anim.Play("ProjectileClear");
+//		anim.Play("ProjectileClear");
 	}
 }

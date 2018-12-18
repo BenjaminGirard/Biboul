@@ -69,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4548374148766742}
   - component: {fileID: 114943100117952418}
+  - component: {fileID: 114818637317634352}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -451,6 +452,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droneBehavior: {fileID: 114943100117952418}
+--- !u!114 &114818637317634352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382627030840260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be595da5d6fa61f48beb7e86d4ce0a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightHover: {fileID: 4800000, guid: f68409059e2ba1b4c9f26c2cc5cf1fc4, type: 3}
+  highlightSelected: {fileID: 4800000, guid: 98b4d254d06bd8f469dc2baa763f93bb, type: 3}
 --- !u!114 &114943100117952418
 MonoBehaviour:
   m_ObjectHideFlags: 1
