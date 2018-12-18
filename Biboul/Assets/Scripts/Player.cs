@@ -26,13 +26,13 @@ public class Player : MonoBehaviour {
                 }
             }
         }
-        if (!gameObject.GetComponentInParent<RoomMove>().fix && gameObject.GetComponent<FirstPersonController>().enabled)
+        if (!GetComponentInParent<RoomMove>().fix && GetComponent<PlayerController>().enabled)
         {
-            gameObject.GetComponent<FirstPersonController>().enabled = false;
+            GetComponent<PlayerController>().enabled = false;
         }
-        else if (gameObject.GetComponentInParent<RoomMove>().fix && !gameObject.GetComponent<FirstPersonController>().enabled)
+        else if (GetComponentInParent<RoomMove>().fix && !GetComponent<PlayerController>().enabled)
         {
-            gameObject.GetComponent<FirstPersonController>().enabled = true;
+            GetComponent<PlayerController>().enabled = true;
         }
     }
 }

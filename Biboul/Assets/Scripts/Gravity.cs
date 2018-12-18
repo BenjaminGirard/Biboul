@@ -5,52 +5,31 @@ using UnityEngine;
 public class Gravity : MonoBehaviour {
 
     public GameObject attractionObject;
-    public float force = 2;
-
+    private float force = 9.8f;
+    private Vector3 direction = new Vector3(0f, 0f, 0f);
     // Use this for initialization
-    void Start () {    
-	}
-	
-	Vector3 NearestVertexTo()
-	{
-		// convert point to local space
-		Vector3 point = this.transform.position;
+    void Start () {
+        GetComponent<Rigidbody>().useGravity = false;
+        attractionObject = GameObject.FindGameObjectWithTag("Down");
+    }
 
-
-		Mesh mesh = attractionObject.GetComponent<MeshCollider>().sharedMesh;
-		float minDistanceSqr = Mathf.Infinity;
-		Vector3 nearestVertex = Vector3.zero;
-		float distSqr;
-		Vector3 diff;
-		// scan all vertices to find nearest
-		foreach (Vector3 vertex in mesh.vertices)
-		{
-			diff = point - vertex;
-			distSqr = diff.sqrMagnitude;
-			if (distSqr < minDistanceSqr)
-			{
-				minDistanceSqr = distSqr;
-				nearestVertex = vertex;
-			}
-		}
-
-		Debug.Log(nearestVertex);
-		// convert nearest vertex back to world space
-		return nearestVertex;
-
-	}
-
-	// Update is called once per frame
-	void Update () {
+    private void Update()
+    {
         if (attractionObject == null)
+        {
             return;
+        }
+        Vector3 closestPoint = attractionObject.GetComponent<Collider>().bounds.ClosestPoint(transform.position);
+        direction = closestPoint - transform.position;
+    }
+    // Update is called once per frame
+    void FixedUpdate () {
+
         //float distance = Vector3.Distance(this.transform.position, attractionObject.transform.position);
 //        Debug.Log(attractionObject.transform.position);
 //        Vector3 closestPoint = attractionObject.GetComponent<Collider>().ClosestPoint(this.transform.position);
 //        Vector3 closestPoint = NearestVertexTo();
-		Vector3 closestPoint = attractionObject.GetComponent<Collider>().bounds.ClosestPoint(this.transform.position);
-		Vector3 vector = closestPoint - this.transform.position;
-        this.GetComponent<Rigidbody>().AddForce(vector * force);
+        GetComponent<Rigidbody>().AddForce(direction.normalized * force);//, ForceMode.Acceleration);
 
 /*		Quaternion rotation = this.transform.rotation;
 		Vector2 axe = Vector2.up;

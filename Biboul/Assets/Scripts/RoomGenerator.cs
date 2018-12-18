@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour {
 
+    public GameObject drone;
+    public GameObject item;
+    public List<GameObject> ennemies = new List<GameObject>();
+    public List<GameObject> items = new List<GameObject>();
     public GameObject cube;
 
     GameObject player;
@@ -172,24 +176,54 @@ public class RoomGenerator : MonoBehaviour {
         }
     }
 
+    void InsideInstantiate()
+    {
+//        Random.InitState(System.DateTime.Now.Millisecond);
+        int rnd = Random.Range(0, 2);
+        if (rnd == 1)
+        {
+            GameObject newDrone = Instantiate(drone);
+            newDrone.transform.parent = gameObject.transform;
+            newDrone.GetComponent<DroneBehavior>().target = GameObject.FindGameObjectWithTag("Player");
+            newDrone.transform.localPosition = new Vector3(size / 2, size / 2, size / 2);
+            newDrone.SetActive(false);
+            ennemies.Add(newDrone);
+
+            GameObject newCube = Instantiate(item);
+            newCube.transform.parent = gameObject.transform;
+            newCube.transform.localPosition = new Vector3(size / 2, size / 2, size / 2);
+            newCube.SetActive(false);
+            items.Add(newCube);
+        }
+    }
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         size = gameObject.GetComponentInParent<MazeGenerator>().roomSize;
         GenerateRoomCubes();
+        InsideInstantiate();
 	}
 
     public void Deactivate()
     {
         foreach (var cube in roomCubes)
             cube.SetActive(false);
-        display = false;
+        foreach (var item in items)
+            item.SetActive(false);
+        foreach (var ennemy in ennemies)
+            ennemy.SetActive(false);
+       display = false;
     }
 
     public void Activate()
     {
         foreach (var cube in roomCubes)
             cube.SetActive(true);
+        foreach (var item in items)
+            item.SetActive(true);
+        foreach (var ennemy in ennemies)
+            ennemy.SetActive(false);
+
         display = true;
  
         for (int i = 1; i < 7; ++i)

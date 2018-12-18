@@ -38,12 +38,9 @@ public class MazeGenerator : MonoBehaviour {
 
     void InstantiatePlane(string type, Vector3 pos, Vector3 scale)
     {
-        GameObject newPlane = Instantiate(plane);
-        newPlane.name = type;
-        newPlane.transform.parent = gameObject.transform;
+        GameObject newPlane = GameObject.FindGameObjectWithTag(type);
         newPlane.transform.localPosition = pos;
         newPlane.transform.localScale = scale;
-        newPlane.tag = type;
     }
 
     void GeneratePlane()
@@ -63,7 +60,7 @@ public class MazeGenerator : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Random.InitState((int)Time.deltaTime);
+        Random.InitState(System.DateTime.Now.Millisecond);
         player.transform.localPosition = new Vector3(roomSize / 2, roomSize * (mazeSize - 0.5f), roomSize / 2);
         GeneratePlane();
         GenerateMazeRooms();

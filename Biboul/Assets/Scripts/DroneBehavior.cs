@@ -6,7 +6,7 @@ using UnityStandardAssets.Effects;
 public class DroneBehavior : MonoBehaviour
 {
 	[SerializeField]
-	public Transform target;
+	public GameObject target;
 	[SerializeField]
 	private float speed;
 	[SerializeField]
@@ -24,6 +24,7 @@ public class DroneBehavior : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		target =  GameObject.FindGameObjectWithTag("Player");
 		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
 		droneEye = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>();
 		timeStamp = Time.time + attackCooldown;
@@ -32,7 +33,7 @@ public class DroneBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Vector3.Distance(transform.position, target.position) < 16)
+		if (Vector3.Distance(transform.position, target.transform.position) < 16)
 		{
 			isAggro = true;
 			droneEye.material.color = Color.red;
@@ -44,8 +45,8 @@ public class DroneBehavior : MonoBehaviour
 		}
 		if (isAggro)
 		{
-			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), Time.deltaTime * 2);
-			if (Vector3.Distance(transform.position, target.position) < 8)
+			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target.transform.position - transform.position), Time.deltaTime * 2);
+			if (Vector3.Distance(transform.position, target.transform.position) < 8)
 			{
 				if (timeStamp <= Time.time)
 				{
@@ -56,7 +57,7 @@ public class DroneBehavior : MonoBehaviour
 			else
  			{
 				anim.Play("Move");
-				transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * speed);	
+				transform.position = Vector3.Lerp(transform.position, target.transform.position, Time.deltaTime * speed);	
 			}
 		}
 	}
@@ -64,7 +65,7 @@ public class DroneBehavior : MonoBehaviour
 	public void Attack()
 	{
 		GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-		bullet.GetComponent<BulletBehavior>().Target = new Vector3(target.position.x, target.position.y, target.position.z);
+		bullet.GetComponent<BulletBehavior>().Target = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
 		bullet.GetComponent<BulletBehavior>().Speed = 6;
 	}
 }

@@ -13,6 +13,8 @@ TagManager:
   - PlayerPivot
   - Bullet
   - Projectile
+  - Wall
+  - PlayerBox
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4606784415442784}
   - component: {fileID: 114191844244686624}
   - component: {fileID: 114209448323191054}
-  - component: {fileID: 114384541599835310}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -53,6 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575b8b59f0024d14c8d5222235d1c34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drone: {fileID: 1382627030840260, guid: 0a357f9550c793a4ca69e439146296f5, type: 2}
+  item: {fileID: 1672506154655498, guid: c733ed61946011d4c9ce21f37a039d5a, type: 2}
+  ennemies: []
+  items: []
   cube: {fileID: 1672506154655498, guid: f1e3fb3fb1ba145418b0d21300566e73, type: 2}
   roomCubes: []
 --- !u!114 &114209448323191054
@@ -67,16 +70,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fix: 1
---- !u!114 &114384541599835310
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1371596517229908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e75482c844ad2a4aa49c340a5bea7cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drone: {fileID: 1382627030840260, guid: 0a357f9550c793a4ca69e439146296f5, type: 2}
-  cube: {fileID: 1672506154655498, guid: c733ed61946011d4c9ce21f37a039d5a, type: 2}
