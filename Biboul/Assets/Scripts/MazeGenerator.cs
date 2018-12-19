@@ -61,7 +61,7 @@ public class MazeGenerator : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Random.InitState(System.DateTime.Now.Millisecond);
-        player.transform.localPosition = new Vector3(roomSize / 2, roomSize * (mazeSize - 0.5f), roomSize / 2);
+        player.transform.localPosition = new Vector3((roomSize * mazeSize) / 2, (roomSize * mazeSize) / 2, (roomSize * mazeSize) / 2);
         GeneratePlane();
         GenerateMazeRooms();
         //GenerateDoors();
@@ -75,6 +75,7 @@ public class MazeGenerator : MonoBehaviour {
             {
                 room.GetComponent<RoomGenerator>().GenerateDoor(Random.Range(1, 7));
                 room.GetComponent<RoomGenerator>().GenerateDoor(Random.Range(1, 7));
+                room.GetComponent<RoomGenerator>().GenerateDoor(2);
             }
             doorGen = true;
         }

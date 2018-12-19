@@ -94,6 +94,8 @@ public class RoomGenerator : MonoBehaviour {
 
     public void GenerateDoor(int face)
     {
+        if (player.transform.parent == transform && face == 2)
+            return;
         doors.Add(face);
         Vector3 posit = this.transform.localPosition;
         switch (face)

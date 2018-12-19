@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
 
     Rigidbody rb;
     GameObject cam;
-    GameObject player;
 
     Vector3 moveDirection;
     CapsuleCollider col;
@@ -38,7 +37,6 @@ public class PlayerController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         cam = GameObject.FindGameObjectWithTag("MainCamera");
-        player = GameObject.FindGameObjectWithTag("PlayerBox");
         col = GetComponent<CapsuleCollider>();
     }
 
@@ -72,7 +70,7 @@ public class PlayerController : MonoBehaviour {
 
     void Move()
     {
-        Vector3 yVelFix = new Vector3(0, rb.velocity.y, 0);
+//        Vector3 yVelFix = new Vector3(0, rb.velocity.y, 0);
         transform.position += moveDirection * walkSpeed * Time.deltaTime;
         //rb.velocity += yVelFix;
     }
@@ -159,17 +157,11 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Wall")
-        {
-            isGrounded += 1;
-        }
+        isGrounded += 1;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Wall")
-        {
-            isGrounded -= 1;
-        }
+        isGrounded -= 1;
     }
 }
