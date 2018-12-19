@@ -8,7 +8,7 @@ public class MazeMove : MonoBehaviour {
     void Start()
     {
         size = gameObject.GetComponent<MazeGenerator>().roomSize;
-        InvokeRepeating("MoveMaze", 5f, 30f);
+        InvokeRepeating("MoveMaze", 30f, 120f);
     }
 
     // Update is called once per frame
