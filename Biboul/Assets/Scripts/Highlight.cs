@@ -61,12 +61,10 @@ public class Highlight : MonoBehaviour
 		Renderer renderer = parent.GetComponent<Renderer>();
 		if (renderer)
 		{
-			print("Update shader");
 			renderer.material.shader = shader;
 		}
 		foreach(Transform child in parent)
 		{
-			print("child");
 			changeShaderRecursive(child, shader);
 		}
 	}

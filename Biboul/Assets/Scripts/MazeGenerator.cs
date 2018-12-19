@@ -75,7 +75,6 @@ public class MazeGenerator : MonoBehaviour {
             {
                 room.GetComponent<RoomGenerator>().GenerateDoor(Random.Range(1, 7));
                 room.GetComponent<RoomGenerator>().GenerateDoor(Random.Range(1, 7));
-                room.GetComponent<RoomGenerator>().GenerateDoor(2);
             }
             doorGen = true;
         }

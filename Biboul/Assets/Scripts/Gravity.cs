@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour {
 
-    public GameObject attractionObject;
+    public GameObject attractionObject = null;
     private float force = 9.8f;
     private Vector3 direction = new Vector3(0f, 0f, 0f);
     // Use this for initialization
     void Start () {
         GetComponent<Rigidbody>().useGravity = false;
-        attractionObject = GameObject.FindGameObjectWithTag("Down");
+        if (tag != "Ennemy")
+        {
+            attractionObject = GameObject.FindGameObjectWithTag("Down");
+        }
     }
 
     private void Update()

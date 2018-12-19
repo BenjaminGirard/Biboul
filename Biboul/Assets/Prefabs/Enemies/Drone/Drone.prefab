@@ -74,9 +74,11 @@ GameObject:
   - component: {fileID: 114629804159739848}
   - component: {fileID: 114488243864419574}
   - component: {fileID: 114610275451565464}
+  - component: {fileID: 114958322724130140}
+  - component: {fileID: 114077842265637510}
   m_Layer: 0
   m_Name: Drone
-  m_TagString: Untagged
+  m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -459,6 +461,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114077842265637510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382627030840260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa4c5d2e65734644a72e2def4150437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114120642982417476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -505,7 +518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractionObject: {fileID: 0}
-  force: 2
 --- !u!114 &114943100117952418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -523,6 +535,19 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4957042812090010}
   bulletPrefab: {fileID: 1531222766315336, guid: 65bb5fe6e4540a440a6119967c3d2840,
     type: 2}
+--- !u!114 &114958322724130140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382627030840260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be595da5d6fa61f48beb7e86d4ce0a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightHover: {fileID: 4800000, guid: f68409059e2ba1b4c9f26c2cc5cf1fc4, type: 3}
+  highlightSelected: {fileID: 4800000, guid: 98b4d254d06bd8f469dc2baa763f93bb, type: 3}
 --- !u!135 &135094638985335474
 SphereCollider:
   m_ObjectHideFlags: 1

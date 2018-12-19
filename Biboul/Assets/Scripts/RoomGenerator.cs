@@ -190,13 +190,27 @@ public class RoomGenerator : MonoBehaviour {
             newDrone.transform.localPosition = new Vector3(size / 2, size / 2, size / 2);
             newDrone.SetActive(false);
             ennemies.Add(newDrone);
-
-            GameObject newCube = Instantiate(item);
-            newCube.transform.parent = gameObject.transform;
-            newCube.transform.localPosition = new Vector3(size / 2, size / 2, size / 2);
-            newCube.SetActive(false);
-            items.Add(newCube);
         }
+        GameObject newCube = Instantiate(item);
+        newCube.transform.parent = gameObject.transform;
+        newCube.transform.localPosition = new Vector3(size * 0.25f, size / 2, size * 0.25f);
+        newCube.SetActive(false);
+        items.Add(newCube);
+        GameObject newCube1 = Instantiate(item);
+        newCube1.transform.parent = gameObject.transform;
+        newCube1.transform.localPosition = new Vector3(size * 0.75f, size / 2, size * 0.75f);
+        newCube1.SetActive(false);
+        items.Add(newCube1);
+        GameObject newCube2 = Instantiate(item);
+        newCube2.transform.parent = gameObject.transform;
+        newCube2.transform.localPosition = new Vector3(size * 0.25f, size / 2, size * 0.75f);
+        newCube2.SetActive(false);
+        items.Add(newCube2);
+        GameObject newCube3 = Instantiate(item);
+        newCube3.transform.parent = gameObject.transform;
+        newCube3.transform.localPosition = new Vector3(size * 0.75f, size / 2, size * 0.25f);
+        newCube3.SetActive(false);
+        items.Add(newCube3);
     }
     // Use this for initialization
     void Start () {
@@ -224,7 +238,7 @@ public class RoomGenerator : MonoBehaviour {
         foreach (var item in items)
             item.SetActive(true);
         foreach (var ennemy in ennemies)
-            ennemy.SetActive(false);
+            ennemy.SetActive(true);
 
         display = true;
  

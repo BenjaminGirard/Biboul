@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114885580831958514}
   - component: {fileID: 114490783244390468}
   - component: {fileID: 54655416524907794}
+  - component: {fileID: 114875128202817984}
+  - component: {fileID: 114180894559444610}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Projectile
@@ -114,6 +116,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114180894559444610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672506154655498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa4c5d2e65734644a72e2def4150437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114490783244390468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +139,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractionObject: {fileID: 0}
-  force: 2
+--- !u!114 &114875128202817984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672506154655498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be595da5d6fa61f48beb7e86d4ce0a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightHover: {fileID: 4800000, guid: f68409059e2ba1b4c9f26c2cc5cf1fc4, type: 3}
+  highlightSelected: {fileID: 4800000, guid: 98b4d254d06bd8f469dc2baa763f93bb, type: 3}
 --- !u!114 &114885580831958514
 MonoBehaviour:
   m_ObjectHideFlags: 1

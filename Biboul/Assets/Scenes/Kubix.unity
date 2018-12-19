@@ -168,7 +168,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.1
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24953ed6327c0b140a506453a0563f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumX: -60
-  maximumX: 60
+  minimumX: -80
+  maximumX: 80
   minimumY: -360
   maximumY: 360
   sensitivityX: 15
@@ -325,7 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa4c5d2e65734644a72e2def4150437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maze: {fileID: 785030492}
 --- !u!1 &138694720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1271,7 @@ GameObject:
   - component: {fileID: 785030493}
   m_Layer: 0
   m_Name: Maze
-  m_TagString: Untagged
+  m_TagString: Maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
