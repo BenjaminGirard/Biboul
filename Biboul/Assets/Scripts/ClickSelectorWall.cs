@@ -16,6 +16,7 @@ public class ClickSelectorWall : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Cursor.lockState = CursorLockMode.Locked;
             AttractionSelector handle = player.GetComponent<AttractionSelector>();
             if (handle.selected != null)
             {

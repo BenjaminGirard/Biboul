@@ -48,6 +48,7 @@ public class HealthBarController : MonoBehaviour {
 
 		if (green.fillAmount < dmg){
 			green.fillAmount = 0.0f;
+			PlayerPrefs.SetFloat("Time", 0);
 			SceneManager.LoadScene(2);
 			return ;
 		}

@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         target = new Vector3(0f, 0f, 0f);
     }
 
